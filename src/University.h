@@ -9,38 +9,28 @@
 #include "Professor.h"
 #include "Administrative.h"
 
+template<class T>
 class University {
 private:
-    std::string name;
-    Professor* professor;
-    Administrative* administrative;
-    std::vector<Professor> professorList;
-    std::vector<Administrative> administrativeList;
+    std::vector<T> genericList;
+
 public:
-    University(const std::string &name, Professor *professor, Administrative *administrative);
+    University(const std::vector<T> &genericList) : genericList(genericList) {}
 
-    const std::string &getName() const;
+    const std::vector<T> &getGenericList() const {
+        return genericList;
+    }
 
-    void setName(const std::string &name);
+    void setGenericList(const std::vector<T> &genericList) {
+        University::genericList = genericList;
+    }
 
-    Professor *getProfessor() const;
 
-    void setProfessor(Professor *professor);
+    T push_back(T genericElement){
+        genericList.push_back(genericElement);
+    }
 
-    Administrative *getAdministrative() const;
-
-    void setAdministrative(Administrative *administrative);
-
-    const std::vector<Professor> &getProfessorList() const;
-
-    void setProfessorList(const std::vector<Professor> &professorList);
-
-    const std::vector<Administrative> &getAdministrativeList() const;
-
-    void setAdministrativeList(const std::vector<Administrative> &administrativeList);
-
-    University();
-
+    
 };
 
 
