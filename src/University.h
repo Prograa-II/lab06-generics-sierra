@@ -15,6 +15,11 @@ private:
     std::vector<T> genericList;
 
 public:
+
+    University(){
+
+    }
+
     University(const std::vector<T> &genericList) : genericList(genericList) {}
 
     const std::vector<T> &getGenericList() const {
@@ -26,11 +31,11 @@ public:
     }
 
 
-    T push_back(T genericElement){
+    void push_back(T genericElement){
         genericList.push_back(genericElement);
     }
 
-    
+
 };
 
 
