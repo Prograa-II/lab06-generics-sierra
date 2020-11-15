@@ -10,10 +10,7 @@ Person::Person() {
     this->documentId = 0;
 }
 
-Person::Person(const std::string & firstName, const std::string & lastName, int documentId) {
-    this->firstName = firstName;
-    this->lastName = lastName;
-    this->documentId = documentId;
+Person::Person(const std::string & firstName, const std::string & lastName, int documentId) : firstName(firstName), lastName(lastName),documentId(documentId){
 }
 
 std::string Person::getFirstName() {
